@@ -1,0 +1,10 @@
+debug=True
+options={"x4":{"A":"/media/jignesh/Data/Script/pycomander/samplelog/access.log","B":"%d/%b/%Y:%H:%M","M1":"@@@4"},
+"x5":{"A":"/media/jignesh/Data/Script/pycomander/samplelog/access.log","B":"%d/%b/%Y:%H:%M","M1":"@@@5"},
+"x2":{"A":"/media/jignesh/Data/Script/pycomander/samplelog/access.log","B":"%d/%b/%Y:%H:%M","M1":"@@@2"},
+"x3":{"A":"/media/jignesh/Data/Script/pycomander/samplelog/access.log","B":"%d/%b/%Y:%H:%M","M1":"@@@3"},
+"mat":{"A":"/media/jignesh/Data/Script/pycomander/samplelog/access.log","B":"%d/%b/%Y:%H:%M"},
+"phpN":{"A":"/home/logdrive/apache2/error.log","B":"%d/%b/%Y:%H:%M","M1":"php7:notice"},
+"phpW":{"A":"/home/logdrive/apache2/error.log","B":"%d/%b/%Y:%H:%M","M1":"php7:warn"},
+"phpE":{"A":"/home/logdrive/apache2/error.log","B":"%d/%b/%Y:%H:%M","M1":"php7:errors"},
+}
