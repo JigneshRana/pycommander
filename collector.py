@@ -7,12 +7,12 @@ import settings
 from functions import *
 
 def collectxx(xxtype,time,args):
-	verbose(args,xxtype+"--"+str(time))
-	verbose(args,settings.options[xxtype]["B"])
-	#print(settings.options[xxtype]["A"])
-	#print(time)
-	if(os.path.exists(settings.options[xxtype]["A"])):
+	logstr("Type:"+str(xxtype)+",Time:"+str(time))
+	logstr("Args:"+str(args))
+	logstr("settings:"+str(settings.options[xxtype]["A"]))
 
+	if(os.path.exists(settings.options[xxtype]["A"])):
+		logstr("---If---")
 		s=[];
 		for x in range(time):
 			next_date = datetime.datetime.now() - datetime.timedelta(minutes=x)
@@ -34,15 +34,12 @@ def collectxx(xxtype,time,args):
 		
 		
 		cmd=cmd+" | wc -l"	
-		verbose(args,"command")
-		verbose(args,cmd)
-		#print(cmd)
 		logstr("cmd:"+str(cmd))
 		os.system(cmd)
 	else:
+		logstr("---else---")
 		print("File Not Foud")
 		logstr("File Not Foud")
-		logstr("Type:"+str(xxtype)+",Time:"+str(time))
-		logstr("Args:"+str(args))
+		
 		
 	return False
