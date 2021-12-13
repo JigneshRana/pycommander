@@ -29,11 +29,18 @@ def collectxx(xxtype,time,args):
 		if "M2" in settings.options[xxtype]:
 			cmd=cmd+" | grep \""+settings.options[xxtype]["M2"]+"\""	
 			
+		if "Reg" in settings.options[xxtype]:
+			cmd=cmd+" | grep -E \""+settings.options[xxtype]["Reg"]+"\""
+		
 		if xxtype == "mat":
 			cmd=cmd+ " | grep \"" +args.find + "\""
+
+		if xxtype == "ip":
+			cmd=cmd+ " | "+settings.options[xxtype]["awk"]
 		
-		
-		cmd=cmd+" | wc -l"	
+		if xxtype not in ["ip"]:
+			cmd=cmd+" | wc -l"	
+
 		logstr("cmd:"+str(cmd))
 		os.system(cmd)
 	else:
