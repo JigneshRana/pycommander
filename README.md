@@ -1,5 +1,5 @@
 # data-agent
-data agent is python3 base command tool, which executes linux commands on timely base which can further use for statasics. In the sample demostration it collects all meaning full infomration which requires for the web server monitoring team.
+The data agent is a python3 base command tool, which executes Linux commands on a timely base which can be further used for statistics. In the sample demonstration, it collects all meaning full information which requires for the webserver monitoring team.
 
 ## Settings.py
 data-agent works with your configuration only. It generates logs under /debuglog/debug_date.log. This helps to debug and check more details.
@@ -36,27 +36,27 @@ settings
 
 # PHP Notice from last 15 minutes log
 ```
-python3 sample.py -phpN=15
+python3 data-agnet.py -phpN=15
 ```
 
 # PHP Warning from last 10 minutes log
 ```
-python3 sample.py -phpW=10
+python3 data-agnet.py -phpW=10
 ```
 
 # PHP Errors from last 10 minutes log
 ```
-python3 sample.py -phpE=15
+python3 data-agnet.py -phpE=15
 ```
 
 ## Apache Details
 
 ### Apache request count 2XX,3XX,4XX,5XX
 ```
-python3 sample.py -x2=10
-python3 sample.py -x3=10
-python3 sample.py -x4=10
-python3 sample.py -x5=10
+python3 data-agnet.py -x2=10
+python3 data-agnet.py -x3=10
+python3 data-agnet.py -x4=10
+python3 data-agnet.py -x5=10
 
 #Apache Time consuming request count(taking more than 100 seconds) from last 10
 python3 commander.py -timeC=10
@@ -86,22 +86,22 @@ python3 commander.py -ip=10
 
 
 
-## Customer linux command
+## Custome linux command
 ```
 # apache service running or not running
-python3 sample.py -co="service apache2 status | grep Active: | grep running | wc -l"
+python3 data-agnet.py -co="service apache2 status | grep Active: | grep running | wc -l"
 
 # ds_agent service running or not running
-python3 sample.py -co="service ds_agent status | grep Active: | grep running | wc -1"
+python3 data-agnet.py -co="service ds_agent status | grep Active: | grep running | wc -1"
 
 # td_agent service running or not running, 1 = running 0 = not running
-python3 sample.py -co="service td-agent status | grep Active: | grep running | wc -1"
+python3 data-agnet.py -co="service td-agent status | grep Active: | grep running | wc -1"
 
 # Number of service process running
-python3 sample.py -co="ps -auxw | grep "\.php " | grep -v grep  | wc -l"
+python3 data-agnet.py -co="ps -auxw | grep "\.php " | grep -v grep  | wc -l"
 
 # count php processes
-ps -auxw | grep "\.php " | grep -v grep  | wc -l
+ps -auxw | grep "\.php " | grep -v grep  | wc -l
 
 # count shell script processes
 ps -auxw | grep "\.sh" | grep -v grep | wc -l
